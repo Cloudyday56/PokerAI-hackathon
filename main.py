@@ -163,7 +163,7 @@ class TemplateBot(Bot):
                 print(max_call_amount)
 
                 if win_prob >= 0.4:
-                    return {'type': 'raise', 'amount':1000000}
+                    return {'type': 'raise', 'amount':1000}
                 else:
                     return {'type': 'fold'}
             if win_prob < 0.15:
@@ -181,7 +181,7 @@ class TemplateBot(Bot):
                 print(max_call_amount)
 
                 if win_prob >= 0.75:
-                    return {'type': 'raise', 'amount':1000000}
+                    return {'type': 'raise', 'amount':1000}
                 if state.pot >= max_call_amount*0.8:
                     return {'type': 'call'}
                 else:
@@ -197,7 +197,6 @@ class TemplateBot(Bot):
             self.prev_win_probability = win_prob
             return {'type': 'call'}
 
-        # #Ru Chen
         # #if rank is high
         # if (((hand[0].rank in [10, 11, 12, 13]) or (hand[0].rank == 1))
         #     and ((hand[1].rank in [10, 11, 12, 13]) or (hand[1].rank == 1))):
